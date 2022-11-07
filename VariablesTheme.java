@@ -1,6 +1,5 @@
 public class VariablesTheme {
     public static void main(String[] args) {
-
         System.out.println("1. Создание переменных и вывод их значений на консоль.");
         byte coreNumber = 3;
         short core = 2;
@@ -12,10 +11,10 @@ public class VariablesTheme {
         boolean color = true;
 
         System.out.println("Процессор Intel Core " + coreIndex
-        + coreNumber + " " + core + "-ядерный процессор");
+                + coreNumber + " " + core + "-ядерный процессор");
         System.out.println("Память " + ddr + "ГБ " + ddrFrequency + "MHz");
         System.out.println("Графика Intel Iris Plus Graphics " +
-        graphics + " МБ");
+                graphics + " МБ");
         System.out.println("Цвет ноутбука - Розовый " + color + "\n");
 
         System.out.println("2. Расчет стоимости товара со скидкой.");
@@ -28,7 +27,7 @@ public class VariablesTheme {
 
         System.out.println("3. Вывод на консоль слова JAVA.");
         System.out.println("   J    a  v     v  a     \n" + "   J   a a  v   v  a a     \n"
-         + "J  J  aaaaa  V V  aaaaa     \n" + " JJ  a     a  V  a     a\n");
+                + "J  J  aaaaa  V V  aaaaa     \n" + " JJ  a     a  V  a     a\n");
 
         System.out.println("4. Отображение min и max значений числовых типов данных.");
         byte maxByte = Byte.MAX_VALUE;
@@ -36,21 +35,21 @@ public class VariablesTheme {
         int maxInt = Integer.MAX_VALUE;
         long maxLong = Long.MAX_VALUE;
 
-        System.out.println(maxByte++);
-        System.out.println(maxByte--);
-        System.out.println(maxByte++);
+        System.out.println(maxByte);
+        System.out.println(++maxByte);
+        System.out.println(--maxByte);
 
-        System.out.println(maxShort++);
-        System.out.println(maxShort--);
-        System.out.println(maxShort++);
+        System.out.println(maxShort);
+        System.out.println(++maxShort);
+        System.out.println(--maxShort);
 
-        System.out.println(maxInt++);
-        System.out.println(maxInt--);
-        System.out.println(maxInt++);
+        System.out.println(maxInt);
+        System.out.println(++maxInt);
+        System.out.println(--maxInt);
 
-        System.out.println(maxLong++);
-        System.out.println(maxLong--);
-        System.out.println(maxLong++ + "\n");
+        System.out.println(maxLong);
+        System.out.println(++maxLong);
+        System.out.println(--maxLong + "\n");
 
         System.out.println("5. Перестановка значений переменных.");
         int a1 = 2, a2 = 5, a3 = a1;
@@ -82,13 +81,9 @@ public class VariablesTheme {
 
         System.out.println("7. Отображение количества сотен, десятков и единиц числа.");
         int srcNum = 123;
-        int units, tens, hundreds;
-        units = srcNum % 10;
-        tens = (srcNum / 10) % 10;
-        hundreds = (srcNum / 100) % 10;
-        System.out.println("Число " + srcNum + " содержит: " + hundreds + " сотню");
-        System.out.println("Число " + srcNum + " содержит: " + tens + " десятка");
-        System.out.println("Число " + srcNum + " содержит: " + units + " единицы\n");
+        int ones = srcNum % 10, tens = (srcNum / 10) % 10, hundreds = srcNum / 100;
+        System.out.println("Число " + srcNum + " содержит: " + hundreds + " сотню, " +
+                tens + " десятка, " + ones + " единицы.\n");
 
         System.out.println("8. Вывод на консоль ASCII-арт Дюка.");
         char slash = '/';
@@ -104,21 +99,15 @@ public class VariablesTheme {
                 lowerSlash + "" + slash + backSlash + lowerSlash + lowerSlash + backSlash + "\n");
 
         System.out.println("9. Произведение и сумма цифр числа.");
-        int srcNum2 = 345, sumSrcNum2, multupSrcNum2;
-        hundreds = srcNum2 / 100;
-        tens = (srcNum2 / 10) % 10;
-        units = srcNum2 % 10;
-        sumSrcNum2 = hundreds + tens + units;
-        multupSrcNum2 = hundreds * tens * units;
-        System.out.println("Сумма числа: " + sumSrcNum2);
-        System.out.println("Произведение числа: " + multupSrcNum2 + "\n");
+        int srcNum2 = 345, sumDigits, multDigits, hundreds9 = srcNum2 / 100,
+                tens9 = (srcNum2 / 10) % 10, ones9 = srcNum2 % 10;
+        sumDigits = hundreds9 + tens9 + ones9;
+        multDigits = hundreds9 * tens9 * ones9;
+        System.out.println("Сумма числа: " + sumDigits);
+        System.out.println("Произведение числа: " + multDigits + "\n");
 
         System.out.println("10. Преобразование секунд.");
-        int second = 86399, hh, hh1, mm, ss;
-        hh = second / 3600;
-        hh1 = second % 3600;
-        mm = hh1 / 60;
-        ss = second % 60;
+        int second = 86399, hh = second / 3600, mm = second % 3600 / 60, ss = second % 60;
         System.out.println(hh + ":" + mm + ":" + ss);
     }
 }
